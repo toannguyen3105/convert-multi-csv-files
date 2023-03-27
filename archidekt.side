@@ -1,0 +1,164 @@
+{
+  "id": "dbf921ea-82ee-465e-8e25-53fa3b786b88",
+  "version": "2.0",
+  "name": "archidekt",
+  "url": "https://www.archidekt.com/",
+  "tests": [{
+    "id": "4eac3ea4-29d6-4556-b1a9-cffb777dea89",
+    "name": "Create all link of cards",
+    "commands": [{
+      "id": "2b54becf-9c68-47e0-9956-7625e1571563",
+      "comment": "",
+      "command": "executeScript",
+      "target": "const a = Array.from({length: 2}, (_, i) => i + 1); return a;",
+      "targets": [],
+      "value": "total"
+    }, {
+      "id": "bde07ffb-c9bf-4d4e-8569-58b24c3cb32b",
+      "comment": "",
+      "command": "echo",
+      "target": "${total}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4963c26-ed06-4ecc-99fb-edc5568c687a",
+      "comment": "",
+      "command": "forEach",
+      "target": "total",
+      "targets": [],
+      "value": "itr"
+    }, {
+      "id": "43c2a9d2-d733-4d60-84c7-e57efd918884",
+      "comment": "",
+      "command": "echo",
+      "target": "${itr}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a86d59ec-b692-41ae-9b79-c9665ef1661d",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.archidekt.com/search/decks?formats=3&gtesize=true&orderBy=-createdAt&page=${itr}&size=60",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "878e947c-acf6-4b32-9db8-9464bd1113ef",
+      "comment": "",
+      "command": "executeScript",
+      "target": "const links = []; const myNodelist = document.querySelectorAll(\".deckLink_thumbnail__aJFu7\"); for (let i = 0; i < myNodelist.length; i++) {   links.push(myNodelist[i].href) }; return links;",
+      "targets": [],
+      "value": "links"
+    }, {
+      "id": "04a794a2-7f04-478a-928d-6f614a2671d4",
+      "comment": "",
+      "command": "echo",
+      "target": "${links}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcf20817-e081-4077-aafb-b5eb40e596c0",
+      "comment": "",
+      "command": "forEach",
+      "target": "links",
+      "targets": [],
+      "value": "link"
+    }, {
+      "id": "b2acc3ad-106a-4c47-ba3d-51ae0913cf5d",
+      "comment": "",
+      "command": "open",
+      "target": "${link}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bec424e-f825-4481-b3b9-7f113784046c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.external",
+      "targets": [
+        ["css=.external", "css:finder"],
+        ["xpath=//div[@id='__next']/div/div[2]/main/div[2]/div/div[2]/li[2]/button/i/i", "xpath:idRelative"],
+        ["xpath=//li[2]/button/i/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b0d304c-943d-46f1-bfc0-1b65f58c1cb2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.field:nth-child(1) > .ui",
+      "targets": [
+        ["css=.field:nth-child(1) > .ui", "css:finder"],
+        ["xpath=//div[@name='fileType']", "xpath:attributes"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "141ec1ca-7782-44c0-b7c7-a2dc4195ac2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.visible > .item:nth-child(2)",
+      "targets": [
+        ["css=.visible > .item:nth-child(2)", "css:finder"],
+        ["xpath=//form/div/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53c54e5a-f8f2-4a6b-9cda-986532cc8bff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.field:nth-child(6) label",
+      "targets": [
+        ["css=.field:nth-child(6) label", "css:finder"],
+        ["xpath=//div[5]/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Category')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e3cf530-3ae5-41b7-a2ff-ec56f662a556",
+      "comment": "",
+      "command": "click",
+      "target": "css=.field:nth-child(6) label",
+      "targets": [
+        ["css=.field:nth-child(6) label", "css:finder"],
+        ["xpath=//div[5]/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Category')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e716278-3e30-4184-9ff8-6af90da4d395",
+      "comment": "",
+      "command": "click",
+      "target": "css=.green:nth-child(3)",
+      "targets": [
+        ["css=.green:nth-child(3)", "css:finder"],
+        ["xpath=//button[@value='1']", "xpath:attributes"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,' Download')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62192735-a26d-487d-a301-326d42e8dbac",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f974d5bc-563a-4233-90d2-7adeed75569d",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d8614a01-8d4f-446f-8bc5-b2fecdbd0890",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4eac3ea4-29d6-4556-b1a9-cffb777dea89"]
+  }],
+  "urls": ["https://www.archidekt.com/"],
+  "plugins": []
+}
